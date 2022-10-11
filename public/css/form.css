@@ -1,0 +1,247 @@
+.inputForm{
+    margin-top: 100px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background-image: url('../img/EPRS_STOA_ATAG_690046_What_If_Deepfakes_final\ \(1\).png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 750px;
+}
+.voiceinputform{
+    height: 940px !important;
+}
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+}
+
+
+
+/*form styles*/
+.msform,.voiceform{
+
+	width: 450px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+
+.msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 99%;
+
+
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+.msform fieldset:not(:first-of-type){
+	display: none;
+}
+/*inputs*/
+.msform input {
+	padding: 30px;
+    padding-left: 70px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+.voiceform input{
+    padding: 0;
+    border: none;
+    margin: 0;
+    width: auto;
+
+}
+/*buttons*/
+.msform .action-button,#outputvideo .action-button, #outputvideoConverted .action-button,
+.voiceOutput .action-button
+{
+    font-size: 13px;
+	width: 100px;
+	background: #DFB163;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+.msform .action-button:hover, .msform .action-button:focus,
+#outputvideo .action-button:hover, #outputvideo .action-button:focus,
+#outputvideoConverted .action-button:hover,  #outputvideoConverted .action-button:focus,
+.voiceOutput .action-button:hover ,.voiceOutput .action-button:focus
+{
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #DFB163;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle{
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li{
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 12px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before{
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #DFB163;
+	color: white;
+}
+
+
+.breaker{
+    height: 30px;
+    border-bottom: 1px solid rgb(124, 121, 121,0.7);
+}
+.voiceform textarea{
+    margin: 20px;
+    padding: 15px;
+}
+.voiceform textarea:focus{
+    outline: none !important;
+    border:2px solid #DFB163;
+    box-shadow: 0 0 10px rgb(163, 162, 162);
+
+}
+.uploadinput {
+    display: none;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#outputvideo{
+    margin: auto;
+    height: 500px;
+    background-color: white;
+    border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#outputvideoConverted{
+    margin: auto;
+    height: 500px;
+    background-color: white;
+    border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.voiceOutput{
+    display: none;
+    height: 400px;
+    width: 50%;
+    background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.imgDefult
+{
+  height: 150px;
+  width: 200px;
+}
+
+.videoDefult{
+    /* height: 400px;
+    width: 300px;
+    padding: 80px;*/
+    /* margin: 10px; */
+
+
+
+}
+
+.videoDiv{
+    /* margin: 10px; */
+
+
+}
+
+.videoButton{
+    width: 250px;
+    height: 250px;
+    /* width: 300px;
+    height: 300px; */
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+
+
+
+
